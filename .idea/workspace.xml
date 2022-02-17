@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="abd61619-22ed-4e23-8bee-965a6abb37c8" name="默认的" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="4" />
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="248BbAYSGkTz18hWVjV3rov076Y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/mysite/polls" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.server_api">
+    <configuration name="CorV_token" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="WebObject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CorV_token.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="WebObject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mysql_sql" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="WebObject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mysql_sql.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="WebObject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server_api.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sql_models" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="WebObject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sql_models.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="try" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="WebObject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/try.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.server_api" />
+        <item itemvalue="Python.mysql_sql" />
+        <item itemvalue="Python.sql_models" />
+        <item itemvalue="Python.CorV_token" />
+        <item itemvalue="Python.try" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="abd61619-22ed-4e23-8bee-965a6abb37c8" name="默认的" comment="" />
+      <created>1643002403063</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643002403063</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="304" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1643002472552">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="304" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1643002472552" />
+    <state x="947" y="405" width="381" height="265" key="Github.ShareDialog" timestamp="1645063248951">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="947" y="405" width="381" height="265" key="Github.ShareDialog/0.25.1680.951@0.25.1680.951" timestamp="1645063248951" />
+    <state width="1444" height="246" key="GridCell.Tab.0.bottom" timestamp="1645062369560">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1659" height="246" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1645062221887" />
+    <state width="1444" height="246" key="GridCell.Tab.0.bottom/0.25.1680.946@0.25.1680.946" timestamp="1645042407495" />
+    <state width="1444" height="246" key="GridCell.Tab.0.bottom/0.25.1680.947@0.25.1680.947" timestamp="1645045547894" />
+    <state width="1444" height="246" key="GridCell.Tab.0.bottom/0.25.1680.949@0.25.1680.949" timestamp="1645062369560" />
+    <state width="1444" height="246" key="GridCell.Tab.0.bottom/0.25.1680.951@0.25.1680.951" timestamp="1645060116467" />
+    <state width="1444" height="246" key="GridCell.Tab.0.center" timestamp="1645062369559">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1659" height="246" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1645062221886" />
+    <state width="1444" height="246" key="GridCell.Tab.0.center/0.25.1680.946@0.25.1680.946" timestamp="1645042407494" />
+    <state width="1444" height="246" key="GridCell.Tab.0.center/0.25.1680.947@0.25.1680.947" timestamp="1645045547893" />
+    <state width="1444" height="246" key="GridCell.Tab.0.center/0.25.1680.949@0.25.1680.949" timestamp="1645062369559" />
+    <state width="1444" height="246" key="GridCell.Tab.0.center/0.25.1680.951@0.25.1680.951" timestamp="1645060116466" />
+    <state width="1444" height="246" key="GridCell.Tab.0.left" timestamp="1645062369559">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1659" height="246" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1645062221886" />
+    <state width="1444" height="246" key="GridCell.Tab.0.left/0.25.1680.946@0.25.1680.946" timestamp="1645042407494" />
+    <state width="1444" height="246" key="GridCell.Tab.0.left/0.25.1680.947@0.25.1680.947" timestamp="1645045547892" />
+    <state width="1444" height="246" key="GridCell.Tab.0.left/0.25.1680.949@0.25.1680.949" timestamp="1645062369559" />
+    <state width="1444" height="246" key="GridCell.Tab.0.left/0.25.1680.951@0.25.1680.951" timestamp="1645060116466" />
+    <state width="1444" height="246" key="GridCell.Tab.0.right" timestamp="1645062369560">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1659" height="246" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1645062221887" />
+    <state width="1444" height="246" key="GridCell.Tab.0.right/0.25.1680.946@0.25.1680.946" timestamp="1645042407495" />
+    <state width="1444" height="246" key="GridCell.Tab.0.right/0.25.1680.947@0.25.1680.947" timestamp="1645045547893" />
+    <state width="1444" height="246" key="GridCell.Tab.0.right/0.25.1680.949@0.25.1680.949" timestamp="1645062369560" />
+    <state width="1444" height="246" key="GridCell.Tab.0.right/0.25.1680.951@0.25.1680.951" timestamp="1645060116467" />
+    <state width="1444" height="304" key="GridCell.Tab.1.bottom" timestamp="1645043824810">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1444" height="304" key="GridCell.Tab.1.bottom/0.25.1680.949@0.25.1680.949" timestamp="1645043824810" />
+    <state width="1444" height="304" key="GridCell.Tab.1.center" timestamp="1645043824810">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1444" height="304" key="GridCell.Tab.1.center/0.25.1680.949@0.25.1680.949" timestamp="1645043824810" />
+    <state width="1444" height="304" key="GridCell.Tab.1.left" timestamp="1645043824809">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1444" height="304" key="GridCell.Tab.1.left/0.25.1680.949@0.25.1680.949" timestamp="1645043824809" />
+    <state width="1444" height="304" key="GridCell.Tab.1.right" timestamp="1645043824810">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state width="1444" height="304" key="GridCell.Tab.1.right/0.25.1680.949@0.25.1680.949" timestamp="1645043824810" />
+    <state x="432" y="167" key="SettingsEditor" timestamp="1645063231221">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="349" y="161" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1643110716379" />
+    <state x="432" y="167" key="SettingsEditor/0.25.1680.951@0.25.1680.951" timestamp="1645063231221" />
+    <state x="221" y="235" width="1480" height="940" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1643277121422">
+      <screen x="0" y="25" width="1680" height="947" />
+    </state>
+    <state x="221" y="235" width="1480" height="940" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.25.1680.947@0.25.1680.947" timestamp="1643277121422" />
+    <state x="208" y="180" width="1480" height="941" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.25.1680.949@0.25.1680.949" timestamp="1643102286839" />
+    <state x="100" y="100" width="1480" height="849" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1643277121422">
+      <screen x="0" y="25" width="1680" height="947" />
+    </state>
+    <state x="100" y="100" width="1480" height="849" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.25.1680.947@0.25.1680.947" timestamp="1643277121422" />
+    <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.25.1680.949@0.25.1680.949" timestamp="1643102286839" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1643110730133">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1643110730133" />
+    <state x="889" y="295" key="svn.repositoryBrowser" timestamp="1645063157562">
+      <screen x="0" y="25" width="1680" height="951" />
+    </state>
+    <state x="889" y="295" key="svn.repositoryBrowser/0.25.1680.951@0.25.1680.951" timestamp="1645063157562" />
+  </component>
+</project>
