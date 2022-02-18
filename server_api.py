@@ -78,7 +78,8 @@ def login():
 @app.route(MY_URL + 'home_source/', methods=['GET','POST'])
 def home_source():
     data = request.get_data()
-    #token = request.values.get('token')
+    #据说要改
+    # token = request.values.get('token')
     data = json.loads(data.decode("utf-8"))
     token = data.get('token')
 
