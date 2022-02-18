@@ -57,7 +57,6 @@ def login():
     # 检查匹配
     TorF = mysql_sql.match(username, password)
     if TorF == str(True):
-        print("True",username)
         # token生成
         token = create_token(username)
         # json生成
@@ -76,20 +75,20 @@ def login():
 
     return ret_json
 
-@app.route(MY_URL + 'home_source/', methods=['GET'])
+@app.route(MY_URL + 'home_source/', methods=['GET','POST'])
 def home_source():
     data = request.get_data()
+    #token = request.values.get('token')
     data = json.loads(data.decode("utf-8"))
     token = data.get('token')
-    print(token)
+
     try:
         data = verify_token(token)
     except Exception:
         abort(404)
-
     # 检查匹配
-    TorF = mysql_sql.find(data["username"])
-    if TorF == 1:
+    TorF = mysql_sql.find(data['username'])
+    if TorF == str(True):
         username = data["username"]
         # json生成
         data = {
@@ -97,7 +96,7 @@ def home_source():
             "message": "Success",
             "username": username
         }
-    elif TorF == 0:
+    elif TorF == str(False):
         data = {
             "code": 200,
             "message": "False"

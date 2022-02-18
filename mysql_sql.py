@@ -9,7 +9,7 @@ def match(username: str, password: str):
     flag = False
     db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
     cursor = db.cursor()  # 使用 cursor() 方法创建一个游标对象 cursor
-    select_sql = "select * from USER_INFO where username=%s" % (username)
+    select_sql = "select * from USER_INFO where username='%s'" % (username)
 
     try:
         cursor.execute(select_sql)
@@ -34,7 +34,7 @@ def find(username: str):
     flag = False
     db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
     cursor = db.cursor()  # 使用 cursor() 方法创建一个游标对象 cursor
-    select_sql = "select * from USER_INFO where name=%s" % (username)
+    select_sql = "select * from USER_INFO where username='%s'" % (username)
 
     try:
         cursor.execute(select_sql)

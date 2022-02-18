@@ -22,9 +22,9 @@ def verify_token(token):
     # 密钥是自己乱编
     key = Serializer('abcdefghijklmm')
     try:
-        # 转换为字典
+        # 转换为字典 {'username': '18811891816'}
         data = key.loads(token)
+        print(data)
     except Exception:
-        return None
-
+        return False
     return data
