@@ -10,7 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd61619-22ed-4e23-8bee-965a6abb37c8" name="默认的" comment="2022.2.18" />
+    <list default="true" id="abd61619-22ed-4e23-8bee-965a6abb37c8" name="默认的" comment="2022.2.18 测试git">
+      <change afterPath="$PROJECT_DIR$/run_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql_models.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +52,7 @@
       <recent name="$PROJECT_DIR$/mysite/polls" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.server_api">
+  <component name="RunManager" selected="Python.run_server">
     <configuration name="CorV_token" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="WebObject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,6 +116,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="run_server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="WebObject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="server_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="WebObject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,34 +179,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="try" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="WebObject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/try.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.run_server" />
         <item itemvalue="Python.server_api" />
         <item itemvalue="Python.mysql_sql" />
         <item itemvalue="Python.sql_models" />
         <item itemvalue="Python.CorV_token" />
-        <item itemvalue="Python.try" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645196493380</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2022.2.18 测试git">
+      <created>1645196932889</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645196932889</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,7 +229,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2022.2.18" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.2.18" />
+    <MESSAGE value="2022.2.18 测试git" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.2.18 测试git" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1643002472552">
@@ -233,34 +247,34 @@
       <screen x="0" y="25" width="1680" height="951" />
     </state>
     <state x="835" y="120" key="Github.UntrackedFilesDialog/0.25.1680.951@0.25.1680.951" timestamp="1645063263350" />
-    <state width="1659" height="279" key="GridCell.Tab.0.bottom" timestamp="1645170653409">
+    <state width="1659" height="279" key="GridCell.Tab.0.bottom" timestamp="1645250952697">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="279" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1645170653409" />
+    <state width="1659" height="279" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1645250952697" />
     <state width="1444" height="246" key="GridCell.Tab.0.bottom/0.25.1680.946@0.25.1680.946" timestamp="1645042407495" />
     <state width="1444" height="246" key="GridCell.Tab.0.bottom/0.25.1680.947@0.25.1680.947" timestamp="1645045547894" />
     <state width="1444" height="237" key="GridCell.Tab.0.bottom/0.25.1680.949@0.25.1680.949" timestamp="1645070679765" />
     <state width="1444" height="237" key="GridCell.Tab.0.bottom/0.25.1680.951@0.25.1680.951" timestamp="1645069178463" />
-    <state width="1659" height="279" key="GridCell.Tab.0.center" timestamp="1645170653408">
+    <state width="1659" height="279" key="GridCell.Tab.0.center" timestamp="1645250952696">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="279" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1645170653408" />
+    <state width="1659" height="279" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1645250952696" />
     <state width="1444" height="246" key="GridCell.Tab.0.center/0.25.1680.946@0.25.1680.946" timestamp="1645042407494" />
     <state width="1444" height="246" key="GridCell.Tab.0.center/0.25.1680.947@0.25.1680.947" timestamp="1645045547893" />
     <state width="1444" height="237" key="GridCell.Tab.0.center/0.25.1680.949@0.25.1680.949" timestamp="1645070679765" />
     <state width="1444" height="237" key="GridCell.Tab.0.center/0.25.1680.951@0.25.1680.951" timestamp="1645069178462" />
-    <state width="1659" height="279" key="GridCell.Tab.0.left" timestamp="1645170653407">
+    <state width="1659" height="279" key="GridCell.Tab.0.left" timestamp="1645250952696">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="279" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1645170653407" />
+    <state width="1659" height="279" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1645250952696" />
     <state width="1444" height="246" key="GridCell.Tab.0.left/0.25.1680.946@0.25.1680.946" timestamp="1645042407494" />
     <state width="1444" height="246" key="GridCell.Tab.0.left/0.25.1680.947@0.25.1680.947" timestamp="1645045547892" />
     <state width="1444" height="237" key="GridCell.Tab.0.left/0.25.1680.949@0.25.1680.949" timestamp="1645070679764" />
     <state width="1444" height="237" key="GridCell.Tab.0.left/0.25.1680.951@0.25.1680.951" timestamp="1645069178461" />
-    <state width="1659" height="279" key="GridCell.Tab.0.right" timestamp="1645170653408">
+    <state width="1659" height="279" key="GridCell.Tab.0.right" timestamp="1645250952697">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="279" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1645170653408" />
+    <state width="1659" height="279" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1645250952697" />
     <state width="1444" height="246" key="GridCell.Tab.0.right/0.25.1680.946@0.25.1680.946" timestamp="1645042407495" />
     <state width="1444" height="246" key="GridCell.Tab.0.right/0.25.1680.947@0.25.1680.947" timestamp="1645045547893" />
     <state width="1444" height="237" key="GridCell.Tab.0.right/0.25.1680.949@0.25.1680.949" timestamp="1645070679765" />
@@ -290,6 +304,10 @@
     </state>
     <state x="349" y="161" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1645196315122" />
     <state x="432" y="167" key="SettingsEditor/0.25.1680.951@0.25.1680.951" timestamp="1645063231221" />
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1645197602032">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1645197602032" />
     <state x="221" y="235" width="1480" height="940" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1643277121422">
       <screen x="0" y="25" width="1680" height="947" />
     </state>

@@ -3,13 +3,13 @@ import pymysql
 Password = "wch011005"
 Database = "USER_INFO"
 
-def match(username: str, password: str):
+def USER_INFO_match(username: str, password: str):
     # 打开数据库连接
     # 这里运行的话需要改 密码 与 数据库 名
     flag = False
     db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
     cursor = db.cursor()  # 使用 cursor() 方法创建一个游标对象 cursor
-    select_sql = "select * from USER_INFO where username='%s'" % (username)
+    select_sql = "select * from USER_INFO where username= '%s' " % (username)
 
     try:
         cursor.execute(select_sql)
@@ -29,12 +29,12 @@ def match(username: str, password: str):
     db.close()
     return str(flag)
 
-def find(username: str):
+def USER_INFO_find(username: str):
     # 打开数据库连接
     flag = False
     db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
     cursor = db.cursor()  # 使用 cursor() 方法创建一个游标对象 cursor
-    select_sql = "select * from USER_INFO where username='%s'" % (username)
+    select_sql = "select * from USER_INFO where username= '%s'" % (username)
 
     try:
         cursor.execute(select_sql)
@@ -47,13 +47,12 @@ def find(username: str):
     db.close()
     return str(flag)
 
-
-def insert(phone: str, password: str):
+def USER_INFO_insert(phone: str, password: str):
     # 打开数据库连接
     flag = False
     db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
     cursor = db.cursor()  # 使用 cursor() 方法创建一个游标对象 cursor
-    insert_sql = "insert into USER_INFO(username, password) values(%s, %s)" % (phone, password)
+    insert_sql = "insert into USER_INFO(username, password) values('%s', '%s')" % (phone, password)
 
     try:
         # 执行sql语句
@@ -71,12 +70,11 @@ def insert(phone: str, password: str):
     db.close()
     return str(flag)
 
-
-def update(phone: str, password: str):
+def USER_INFO_update(phone: str, password: str):
     flag = False
     db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
     cursor = db.cursor()
-    updata_sql = "update USER_INFO set password=%s where name=%s" % (phone, password)
+    updata_sql = "update USER_INFO set password=%s where name= '%s'" % (phone, password)
 
     try:
         # 执行sql语句
@@ -94,12 +92,11 @@ def update(phone: str, password: str):
     db.close()
     return str(flag)
 
-
-def delete(phone: str):
+def USER_INFO_delete(phone: str):
     flag = False
     db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
     cursor = db.cursor()
-    del_sql = "delete from USER_INFO where name='%s'" % (phone)
+    del_sql = "delete from USER_INFO where name= '%s'" % (phone)
 
     try:
         cursor.execute(del_sql)
@@ -114,9 +111,26 @@ def delete(phone: str):
     db.close()
     return str(flag)
 
+def SERVICE_INFO_insert(servicename: str, servicebrief: str, servicedetail: str, iftrained: bool, iftrainable: bool,userid: str):
+    # 打开数据库连接
+    flag = False
+    db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
+    cursor = db.cursor()  # 使用 cursor() 方法创建一个游标对象 cursor
+    insert_sql = "insert into SERVICE_INFO(servicename, servicebrief, servicedetail, iftrained, iftrainable, userid) values('%s', '%s', '%s', %s ,% s ,'%s')" % (
+        servicename, servicebrief, servicedetail,iftrained, iftrainable,userid)
 
-if __name__ == "__main__":
-    # select("'admin'")
-    insert("18811891816", "18811891816")
-    # select("18811891816","18811891816")
-    # delete("18811891816")
+    try:
+        # 执行sql语句
+        cursor.execute(insert_sql)
+        # 提交到数据库执行
+        db.commit()
+        # 关闭数据库连接
+        flag = True
+
+    except:
+        print("数据插入失败,请查检try语句里的代码")
+        # raise
+        flag = False
+
+    db.close()
+    return str(flag)

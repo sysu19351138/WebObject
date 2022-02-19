@@ -34,16 +34,12 @@ def post_task():
     print(hello)
     return jsonify(request.json)
 
-
+##########################
 # 404处理
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
-
-##########################
-# 访问示例
-# http://192.168.2.105:5100/everything/api/v1/tasks/login/?name=18811891816&password=18811891816
 @app.route(MY_URL + 'login/', methods=['POST'])
 def login():
     data = request.get_data()
@@ -55,7 +51,7 @@ def login():
         abort(404)
 
     # 检查匹配
-    TorF = mysql_sql.match(username, password)
+    TorF = mysql_sql.USER_INFO_match(username, password)
     if TorF == str(True):
         # token生成
         token = create_token(username)
@@ -88,7 +84,7 @@ def home_source():
     except Exception:
         abort(404)
     # 检查匹配
-    TorF = mysql_sql.find(data['username'])
+    TorF = mysql_sql.USER_INFO_find(data['username'])
     if TorF == str(True):
         username = data["username"]
         # json生成
@@ -106,6 +102,30 @@ def home_source():
     ret_json = json.dumps(data)
     return ret_json
 
+@app.route(MY_URL + 'server_visualize/', methods=['GET','POST'])
+def server_visualize():
+    data = request.get_data()
+    # 据说要改
+    # token = request.values.get('token')
+    data = json.loads(data.decode("utf-8"))
+    token = data.get('token')
 
-if __name__ == '__main__':
-    app.run()
+    try:
+        data = verify_token(token)
+    except Exception:
+        abort(404)
+    # 检查匹配
+    TorF = mysql_sql.find(data['username'])
+    if TorF == str(True):
+        username = data["username"]
+        # json生成
+        data = {
+            "code": 200,
+            "message": "Success",
+            "username": username
+        }
+    elif TorF == str(False):
+        data = {
+            "code": 200,
+            "message": "False"
+        }
