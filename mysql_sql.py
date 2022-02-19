@@ -1,4 +1,5 @@
 import pymysql
+
 # 数据库配置在此修改
 Password = "wch011005"
 Database = "USER_INFO"
@@ -111,6 +112,7 @@ def USER_INFO_delete(phone: str):
     db.close()
     return str(flag)
 
+#####################################
 def SERVICE_INFO_insert(servicename: str, servicebrief: str, servicedetail: str, iftrained: bool, iftrainable: bool,userid: str):
     # 打开数据库连接
     flag = False
@@ -131,6 +133,34 @@ def SERVICE_INFO_insert(servicename: str, servicebrief: str, servicedetail: str,
         print("数据插入失败,请查检try语句里的代码")
         # raise
         flag = False
+
+    db.close()
+    return str(flag)
+
+#####################################
+# 表GLOBAL_MODEL_INFO的数据插入
+def GLOBAL_MODEL_INFO_insert(servicename: str, modelversion: str, trainstrategies: str,
+                             initializetime: str,updatenum: int, updatetime: str, modelpath:str):
+    # 打开数据库连接
+    flag = False
+    db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
+    cursor = db.cursor()  # 使用 cursor() 方法创建一个游标对象 cursor
+    insert_sql = "insert into GLOBAL_MODEL_INFO(servicename, modelversion, trainstrategies,initializetime, updatenum, updatetime, modelpath) values('%s', '%s', '%s', '%s', %s, '%s', '%s')" % \
+                 (servicename, modelversion, trainstrategies,initializetime, updatenum, updatetime, modelpath)
+
+    try:
+        # 执行sql语句
+        cursor.execute(insert_sql)
+        # 提交到数据库执行
+        db.commit()
+        # 关闭数据库连接
+        flag = True
+
+    except:
+        print("数据插入失败,请查检try语句里的代码")
+        # raise
+        flag = False
+
 
     db.close()
     return str(flag)

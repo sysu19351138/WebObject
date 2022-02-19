@@ -43,16 +43,15 @@ class SERVICE_INFO(db.Model):
     # 服务名
     servicename = db.Column(db.String(20), primary_key=True)
     # 服务简介
-    servicebrief = db.Column(db.String(20), nullable=False)
+    servicebrief = db.Column(db.String(50), nullable=False)
     # 服务详情
-    servicedetail = db.Column(db.String(20), nullable=False)
+    servicedetail = db.Column(db.String(50), nullable=False)
     # 所请求的服务是否有已训练模型
-    iftrained = db.Column(db.Boolean, nullable=True)
+    iftrained = db.Column(db.Boolean, nullable=False)
     # 所请求的服务是否训练
-    iftrainable = db.Column(db.Boolean, nullable=True)
+    iftrainable = db.Column(db.Boolean, nullable=False)
     # 负责该人的管理员ID
     userid = db.Column(db.String(20), nullable=False)
-
 
 # 创建全局模型信息表
 class GLOBAL_MODEL_INFO(db.Model):
