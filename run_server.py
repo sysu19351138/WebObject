@@ -9,6 +9,6 @@ if __name__ == '__main__':
 
     mysql_sql.USER_INFO_insert("18811891816", "18811891816")
     # SERVICE_INFO测试表
-    mysql_sql.SERVICE_INFO_insert("sad", "a", "b", "43fsa")
+    mysql_sql.SERVICE_INFO_insert("sad", "a", "b",True,False, "43fsa")
 
     server_api.app.run()
