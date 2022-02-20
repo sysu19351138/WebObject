@@ -213,7 +213,7 @@ def model_download(filename):
         def send_chunk():
             with open(DOWNLOAD_PATH, 'rb') as target_file:
                 while True:
-                    chunk = target_file.read(2 * 1024 )  # 每次读取大小
+                    chunk = target_file.read(2 * 1024 * 1024)  # 每次读取2mb大小
                     if not chunk:
                         break
                     yield chunk
