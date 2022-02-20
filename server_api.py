@@ -201,7 +201,7 @@ def model_download(filename):
     if TorF:
         # 存放模型的文件夹名字 “download”
         DOWNLOAD_PATH = os.path.join(os.path.dirname(__file__), 'download')
-        DOWNLOAD_PATH = os.path.join(DOWNLOAD_PATH,'picture.png')
+        DOWNLOAD_PATH = os.path.join(DOWNLOAD_PATH,filename)
         print(DOWNLOAD_PATH)
         # json生成
         data = {
