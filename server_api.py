@@ -1,9 +1,10 @@
 from flask import Flask, jsonify,abort, make_response
-from flask import request,Response
+from flask import request,Response,app
 from CorV_token import create_token,verify_token
 import json
 import redis
 import mysql_sql
+import os
 
 
 app = Flask(__name__)
@@ -179,6 +180,53 @@ def event_stream():
     for message in pubsub.listen():
         yield 'data: %s\n\n' % message['data']
 
+# 返回流式文件
+@app.route(MY_URL + '/model_download/<filename>', methods=['POST', 'GET'])
+def model_download(filename):
+    # json 处理
+    data = request.get_data()
+    data = json.loads(data.decode("utf-8"))
+    token = data.get('token')
+    servicename = data.get('servicename')
+
+    # 判断数据库中同时有存在的username和servicename再返回图片
+    data = verify_token(token)
+    print(data)
+    flag1 = mysql_sql.USER_INFO_find(data['username'])
+    flag2 = mysql_sql.SERVICE_INFO_find(servicename=servicename)
+
+    if flag1 and flag2:
+        TorF = True
+
+    if TorF:
+        # 存放模型的文件夹名字 “download”
+        DOWNLOAD_PATH = os.path.join(os.path.dirname(__file__), 'download')
+        DOWNLOAD_PATH = os.path.join(DOWNLOAD_PATH,'picture.png')
+        print(DOWNLOAD_PATH)
+        # json生成
+        data = {
+            "code": 200,
+            "message": "Success",
+        }
+
+        # 流式读取
+        def send_chunk():
+            with open(DOWNLOAD_PATH, 'rb') as target_file:
+                while True:
+                    chunk = target_file.read(2 * 1024 )  # 每次读取大小
+                    if not chunk:
+                        break
+                    yield chunk
+    else:
+        data = {
+            "code": 200,
+            "message": "False"
+        }
+
+    ret_json = json.dumps(data)
+    # 现在只返回图片
+    return Response(send_chunk(), content_type='application/octet-stream')
+
 # 以下用以测试
 @app.route(MY_URL + 'service_test/', methods=['GET','POST'])
 def service_test():
@@ -221,6 +269,8 @@ def home():
             sse();
         </script>
     """
+
+
 
 
 
