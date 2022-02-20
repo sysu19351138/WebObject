@@ -98,6 +98,43 @@ def home_source():
     ret_json = json.dumps(data)
     return ret_json
 
+@app.route(MY_URL + 'service_visualize/', methods=['GET','POST'])
+def service_visualize():
+    data = request.get_data()
+    data = json.loads(data.decode("utf-8"))
+    token = data.get('token')
+
+    try:
+        data = verify_token(token)
+    except Exception:
+        abort(404)
+    # 检查匹配
+
+    TorF = mysql_sql.USER_INFO_find(data['username'])
+
+    if TorF == str(True):
+        service_info = mysql_sql.SERVICE_INFO_find(servicename='service1')
+        print(service_info)
+        servicename = service_info[0][0]
+        servicebrief = service_info[0][1]
+        servicedetail = service_info[0][2]
+        # json生成
+        data = {
+            "code": 200,
+            "message": "Success",
+            "servicename": servicename,
+            "servicebrief": servicebrief,
+            "servicedetail": servicedetail,
+        }
+    elif TorF == str(False):
+        data = {
+            "code": 200,
+            "message": "False"
+        }
+
+    ret_json = json.dumps(data)
+    return ret_json
+
 # 用以校验token 并发布流信息
 @app.route(MY_URL + 'service_request/', methods=['GET','POST'])
 def service_request():

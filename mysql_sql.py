@@ -138,6 +138,24 @@ def SERVICE_INFO_insert(servicename: str, servicebrief: str, servicedetail: str,
     db.close()
     return str(flag)
 
+def SERVICE_INFO_find(servicename: str):
+    # 打开数据库连接
+    flag = False
+    db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
+    cursor = db.cursor()  # 使用 cursor() 方法创建一个游标对象 cursor
+    select_sql = "select * from SERVICE_INFO where servicename= '%s'" % (servicename)
+
+    try:
+        cursor.execute(select_sql)
+        data = cursor.fetchall()
+        flag = True
+    except:
+        print("查询出错")
+        flag = False
+
+    db.close()
+    return data
+
 #####################################
 # GLOBAL_MODEL_INFO
 def GLOBAL_MODEL_INFO_insert(servicename: str, modelversion: str, trainstrategies: str,
