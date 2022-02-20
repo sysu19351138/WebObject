@@ -113,6 +113,7 @@ def USER_INFO_delete(phone: str):
     return str(flag)
 
 #####################################
+# SERVICE_INFO
 def SERVICE_INFO_insert(servicename: str, servicebrief: str, servicedetail: str, iftrained: bool, iftrainable: bool,userid: str):
     # 打开数据库连接
     flag = False
@@ -138,7 +139,7 @@ def SERVICE_INFO_insert(servicename: str, servicebrief: str, servicedetail: str,
     return str(flag)
 
 #####################################
-# 表GLOBAL_MODEL_INFO的数据插入
+# GLOBAL_MODEL_INFO
 def GLOBAL_MODEL_INFO_insert(servicename: str, modelversion: str, trainstrategies: str,
                              initializetime: str,updatenum: int, updatetime: str, modelpath:str):
     # 打开数据库连接
