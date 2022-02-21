@@ -10,11 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd61619-22ed-4e23-8bee-965a6abb37c8" name="默认的" comment="2022.2.19 全部整合 全部测试">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_api.py" afterDir="false" />
-    </list>
+    <list default="true" id="abd61619-22ed-4e23-8bee-965a6abb37c8" name="默认的" comment="2022.2.19 增加了等待时间 服务表增加了" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -284,7 +280,21 @@
       <option name="project" value="LOCAL" />
       <updated>1645339495391</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="2022.2.19 增加了等待时间 服务表增加了">
+      <created>1645431954559</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1645431954559</updated>
+    </task>
+    <task id="LOCAL-00014" summary="2022.2.19 增加了等待时间 服务表增加了">
+      <created>1645432013276</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1645432013276</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,7 +318,8 @@
     <MESSAGE value="2022.2.19 完善了请求发布功能" />
     <MESSAGE value="2022.2.19 全部整合 未测试" />
     <MESSAGE value="2022.2.19 全部整合 全部测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.2.19 全部整合 全部测试" />
+    <MESSAGE value="2022.2.19 增加了等待时间 服务表增加了" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.2.19 增加了等待时间 服务表增加了" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1643002472552">
@@ -382,10 +393,10 @@
     </state>
     <state x="0" y="0" width="1680" height="1050" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1645288490709" />
     <state x="432" y="167" key="SettingsEditor/0.25.1680.951@0.25.1680.951" timestamp="1645063231221" />
-    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1645339565270">
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1645432072615">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1645339565270" />
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1645432072615" />
     <state x="221" y="235" width="1480" height="940" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1643277121422">
       <screen x="0" y="25" width="1680" height="947" />
     </state>
