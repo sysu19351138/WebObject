@@ -1,10 +1,11 @@
 from flask import Flask, jsonify,abort, make_response
-from flask import request,Response,app
+from flask import request,Response
 from CorV_token import create_token,verify_token
 import json
 import redis
 import mysql_sql
 import os
+import time
 
 
 app = Flask(__name__)
@@ -167,9 +168,12 @@ def service_request():
 
     # 流信息发布 通道为'event'
     red = redis.StrictRedis(host='localhost', port=6379, db=6)
+    red.publish('event', u'[Code:200 Message:Publish Begin]')
+    time.sleep(20)
     red.publish('event', u'[Code:200 Message:Success] [Userid]:%s [Event]:%s [Data]:%s [Retry]:%s' % ("id",'event',"None",'None'))
 
     ret_json = json.dumps(data)
+    #Response(ret_json, content_type='application/json')
     return ret_json
 
 # 实时监听事件(yield)
