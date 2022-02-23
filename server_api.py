@@ -306,10 +306,9 @@ def strategy_set():
             "message": "Token Verify = False"
         }
     print(strategies)
-    # GLOBAL_MODEL_INFO表更新
-    mysql_sql.GLOBAL_MODEL_INFO_update1(servicename,strategies['modelversion'],strategies['maxround'],strategies['aggregationtiming'],
+    # GLOBAL_MODEL_INFO表更新 版本自己设置未更新
+    mysql_sql.GLOBAL_MODEL_INFO_update1(servicename,"0.1",strategies['maxround'],strategies['aggregationtiming'],
                                   strategies['epsilon'],strategies['batchsize'],strategies['lr'])
-
     # 流信息发布 通道为'event'
     red = redis.StrictRedis(host='localhost', port=6379, db=6)
     red.publish('event', u'[Code:200 Message:Publish Begin]')

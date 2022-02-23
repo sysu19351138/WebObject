@@ -10,12 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd61619-22ed-4e23-8bee-965a6abb37c8" name="默认的" comment="2022.2.19 增加了等待时间 服务表增加了">
+    <list default="true" id="abd61619-22ed-4e23-8bee-965a6abb37c8" name="默认的" comment="2022.2.23 策略设置与训练调用功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_sql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql_models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645432114085</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="2022.2.23 策略设置与训练调用功能">
+      <created>1645626979056</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1645626979056</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,7 +337,8 @@
     <MESSAGE value="2022.2.19 全部整合 未测试" />
     <MESSAGE value="2022.2.19 全部整合 全部测试" />
     <MESSAGE value="2022.2.19 增加了等待时间 服务表增加了" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.2.19 增加了等待时间 服务表增加了" />
+    <MESSAGE value="2022.2.23 策略设置与训练调用功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.2.23 策略设置与训练调用功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1643002472552">
@@ -353,34 +359,34 @@
       <screen x="0" y="25" width="1680" height="951" />
     </state>
     <state x="835" y="120" key="Github.UntrackedFilesDialog/0.25.1680.951@0.25.1680.951" timestamp="1645063263350" />
-    <state width="864" height="279" key="GridCell.Tab.0.bottom" timestamp="1645626740428">
+    <state width="1659" height="279" key="GridCell.Tab.0.bottom" timestamp="1645629385431">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="864" height="279" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1645626740428" />
+    <state width="1659" height="279" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1645629385431" />
     <state width="1444" height="246" key="GridCell.Tab.0.bottom/0.25.1680.946@0.25.1680.946" timestamp="1645042407495" />
     <state width="1444" height="246" key="GridCell.Tab.0.bottom/0.25.1680.947@0.25.1680.947" timestamp="1645045547894" />
     <state width="1444" height="237" key="GridCell.Tab.0.bottom/0.25.1680.949@0.25.1680.949" timestamp="1645070679765" />
     <state width="1444" height="237" key="GridCell.Tab.0.bottom/0.25.1680.951@0.25.1680.951" timestamp="1645069178463" />
-    <state width="864" height="279" key="GridCell.Tab.0.center" timestamp="1645626740427">
+    <state width="1659" height="279" key="GridCell.Tab.0.center" timestamp="1645629385430">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="864" height="279" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1645626740427" />
+    <state width="1659" height="279" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1645629385430" />
     <state width="1444" height="246" key="GridCell.Tab.0.center/0.25.1680.946@0.25.1680.946" timestamp="1645042407494" />
     <state width="1444" height="246" key="GridCell.Tab.0.center/0.25.1680.947@0.25.1680.947" timestamp="1645045547893" />
     <state width="1444" height="237" key="GridCell.Tab.0.center/0.25.1680.949@0.25.1680.949" timestamp="1645070679765" />
     <state width="1444" height="237" key="GridCell.Tab.0.center/0.25.1680.951@0.25.1680.951" timestamp="1645069178462" />
-    <state width="864" height="279" key="GridCell.Tab.0.left" timestamp="1645626740427">
+    <state width="1659" height="279" key="GridCell.Tab.0.left" timestamp="1645629385430">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="864" height="279" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1645626740427" />
+    <state width="1659" height="279" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1645629385430" />
     <state width="1444" height="246" key="GridCell.Tab.0.left/0.25.1680.946@0.25.1680.946" timestamp="1645042407494" />
     <state width="1444" height="246" key="GridCell.Tab.0.left/0.25.1680.947@0.25.1680.947" timestamp="1645045547892" />
     <state width="1444" height="237" key="GridCell.Tab.0.left/0.25.1680.949@0.25.1680.949" timestamp="1645070679764" />
     <state width="1444" height="237" key="GridCell.Tab.0.left/0.25.1680.951@0.25.1680.951" timestamp="1645069178461" />
-    <state width="864" height="279" key="GridCell.Tab.0.right" timestamp="1645626740428">
+    <state width="1659" height="279" key="GridCell.Tab.0.right" timestamp="1645629385431">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="864" height="279" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1645626740428" />
+    <state width="1659" height="279" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1645629385431" />
     <state width="1444" height="246" key="GridCell.Tab.0.right/0.25.1680.946@0.25.1680.946" timestamp="1645042407495" />
     <state width="1444" height="246" key="GridCell.Tab.0.right/0.25.1680.947@0.25.1680.947" timestamp="1645045547893" />
     <state width="1444" height="237" key="GridCell.Tab.0.right/0.25.1680.949@0.25.1680.949" timestamp="1645070679765" />
@@ -410,10 +416,10 @@
     </state>
     <state x="0" y="0" width="1680" height="1050" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1645288490709" />
     <state x="432" y="167" key="SettingsEditor/0.25.1680.951@0.25.1680.951" timestamp="1645063231221" />
-    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1645432119685">
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1645627259643">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1645432119685" />
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1645627259643" />
     <state x="221" y="235" width="1480" height="940" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1643277121422">
       <screen x="0" y="25" width="1680" height="947" />
     </state>

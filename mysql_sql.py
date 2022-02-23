@@ -1,5 +1,5 @@
 import pymysql
-import datetime
+from datetime import datetime
 
 # 数据库配置在此修改
 Password = "wch011005"
@@ -189,9 +189,9 @@ def GLOBAL_MODEL_INFO_update1(servicename: str, modelversion: str, maxround: int
     cursor = db.cursor()
 
     # 配置信息更新 与 时间更新
-    time = datetime.datetime()
-    update_sql = "update GLOBAL_MODEL_INFO set (servicename, modelversion, maxround, aggregationtiming, epsilon, batchsize, lr, updatetime) values('%s', '%s', %s, '%s', '%s', %s, %s, '%s')" % \
-                 (servicename, modelversion, maxround, aggregationtiming, epsilon, batchsize, lr, time)
+    time = datetime.now()
+    update_sql = "update GLOBAL_MODEL_INFO set modelversion = '%s', maxround = %s, aggregationtiming = '%s', epsilon = '%s', batchsize = %s, lr = %s where servicename = '%s'" \
+                 % (modelversion, maxround, aggregationtiming, epsilon, batchsize, lr, servicename)
     try:
         # 执行sql语句
         cursor.execute(update_sql)
