@@ -115,7 +115,7 @@ def USER_INFO_delete(phone: str):
     return str(flag)
 
 
-    """SERVICE_INFO"""
+"""SERVICE_INFO"""
 def SERVICE_INFO_insert(servicename: str, servicebrief: str, servicedetail: str, iftrained: bool, iftrainable: bool, userid: str, adminid:str):
     # 打开数据库连接
     flag = False
@@ -157,9 +157,24 @@ def SERVICE_INFO_find(servicename: str):
     db.close()
     return data
 
-def SERVICE_INFO_updata():
+def SERVICE_INFO_get():
+    # 打开数据库连接
+    flag = False
+    db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
+    cursor = db.cursor()  # 使用 cursor() 方法创建一个游标对象 cursor
+    select_sql = "select * from SERVICE_INFO "
 
-    """GLOBAL_MODEL_INFO"""
+    try:
+        cursor.execute(select_sql)
+        data = cursor.fetchall()
+    except:
+        print("查询出错")
+
+    db.close()
+    return data
+
+
+"""GLOBAL_MODEL_INFO"""
 def GLOBAL_MODEL_INFO_insert(servicename: str, modelversion: str, maxround: int, aggregationtiming: str, epsilon: str, batchsize: int, lr:float):
     # 打开数据库连接
     flag = False
@@ -206,3 +221,37 @@ def GLOBAL_MODEL_INFO_update1(servicename: str, modelversion: str, maxround: int
 
     db.close()
     return str(flag)
+
+def GLOBAL_MODEL_INFO_get():
+    # 打开数据库连接
+    flag = False
+    db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
+    cursor = db.cursor()  # 使用 cursor() 方法创建一个游标对象 cursor
+    select_sql = "select * from GLOBAL_MODEL_INFO "
+
+    try:
+        cursor.execute(select_sql)
+        data = cursor.fetchall()
+    except:
+        print("查询出错")
+
+    db.close()
+    return data
+
+def GLOBAL_MODEL_INFO_find(servicename: str):
+    # 打开数据库连接
+    flag = False
+    db = pymysql.connect(host="localhost", user="root", password=Password, database=Database)
+    cursor = db.cursor()  # 使用 cursor() 方法创建一个游标对象 cursor
+    select_sql = "select * from GLOBAL_MODEL_INFO where servicename= '%s'" % (servicename)
+
+    try:
+        cursor.execute(select_sql)
+        data = cursor.fetchall()
+        flag = True
+    except:
+        print("查询出错")
+        flag = False
+
+    db.close()
+    return data
