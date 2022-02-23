@@ -6,7 +6,7 @@ import redis
 import mysql_sql
 import os
 import time
-
+import mysql_sql
 
 app = Flask(__name__)
 MY_URL = '/api/'
@@ -32,12 +32,13 @@ def post_task():
     print(hello)
     return jsonify(request.json)
 
-###############################################
-# 404处理
+"""通用接口"""
+# 404 处理
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
+"""登陆注册接口"""
 @app.route(MY_URL + 'login/', methods=['POST'])
 def login():
     data = request.get_data()
@@ -69,6 +70,7 @@ def login():
 
     return ret_json
 
+"""请求发布接口"""
 @app.route(MY_URL + 'home_source/', methods=['GET','POST'])
 def home_source():
     data = request.get_data()
@@ -169,7 +171,7 @@ def service_request():
     # 流信息发布 通道为'event'
     red = redis.StrictRedis(host='localhost', port=6379, db=6)
     red.publish('event', u'[Code:200 Message:Publish Begin]')
-    time.sleep(20)
+    time.sleep(10)
     red.publish('event', u'[Code:200 Message:Success] [Userid]:%s [Event]:%s [Data]:%s [Retry]:%s' % ("id",'event',"None",'None'))
 
     ret_json = json.dumps(data)
@@ -273,6 +275,58 @@ def home():
             sse();
         </script>
     """
+
+"""策略设置与训练调用接口"""
+@app.route(MY_URL + 'strategy_set/',methods=['GET','POST'])
+def strategy_set():
+    data = request.get_data()
+    data = json.loads(data.decode("utf-8"))
+
+    token = data.get('token')
+    servicename = data.get('servicename')
+    strategies = data.get('strategies') # 字典
+
+    # 获取 token servicename 并校验 token
+    try:
+        data = verify_token(token)
+    except Exception:
+        abort(404)
+
+    # 检查匹配
+    TorF = mysql_sql.USER_INFO_find(data['username'])
+    if TorF == str(True):
+        # json生成
+        data = {
+            "code": 200,
+            "message": "Token Verify = Success",
+        }
+    elif TorF == str(False):
+        data = {
+            "code": 400,
+            "message": "Token Verify = False"
+        }
+    print(strategies)
+    # GLOBAL_MODEL_INFO表更新
+    mysql_sql.GLOBAL_MODEL_INFO_update1(servicename,strategies['modelversion'],strategies['maxround'],strategies['aggregationtiming'],
+                                  strategies['epsilon'],strategies['batchsize'],strategies['lr'])
+
+    # 流信息发布 通道为'event'
+    red = redis.StrictRedis(host='localhost', port=6379, db=6)
+    red.publish('event', u'[Code:200 Message:Publish Begin]')
+    time.sleep(10)
+    red.publish('event', u'[Code:200 Message:Success] [Userid]:%s [Event]:%s [Data]:%s [Retry]:%s' % ("id",'event',"None",'None'))
+
+    ret_json = json.dumps(data)
+    #Response(ret_json, content_type='application/json')
+    return ret_json
+
+
+
+
+
+
+
+
 
 
 

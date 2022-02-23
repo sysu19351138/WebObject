@@ -28,7 +28,7 @@ app.config.from_object(Config)
 # 创建数据库sqlalchemy工具对象
 db = SQLAlchemy(app)
 
-# 用户信息
+# 用户信息表
 class USER_INFO(db.Model):
     # 定义表名
     __tablename__ = 'USER_INFO'
@@ -51,25 +51,33 @@ class SERVICE_INFO(db.Model):
     # 所请求的服务是否训练
     iftrainable = db.Column(db.Boolean, nullable=False)
     # 负责该人的管理员ID
+    adminid = db.Column(db.String(20), nullable=False)
+    # 服务使用者ID
     userid = db.Column(db.String(20), nullable=False)
 
 # 创建全局模型信息表
 class GLOBAL_MODEL_INFO(db.Model):
     # 定义表名
     __tablename__ = 'GLOBAL_MODEL_INFO'
-    # 定义字段
-    #id = db.Column(db.Integer, primary_key=True)  # 编号
     # 服务名
-    servicename = db.Column(db.String(20), primary_key=True)
+    servicename = db.Column(db.String(20), primary_key=True, nullable=False)
     # 模型版本
     modelversion = db.Column(db.String(20), primary_key=True, nullable=False)
-    # 模型训练策略
-    trainstrategies = db.Column(db.String(20), primary_key=True, nullable=False)
+    # 最大训练轮数
+    maxround = db.Column(db.Integer, nullable=True)
+    # 聚合协调时序
+    aggregationtiming = db.Column(db.String(20), nullable=True)
+    # 收敛精度
+    epsilon = db.Column(db.String(20), nullable=True)
+    # 批量大小
+    batchsize = db.Column(db.Integer, nullable=True)
+    # 学习率
+    lr = db.Column(db.Float, nullable=True)
     # 初始化策略保存时间
     initializetime = db.Column(db.DateTime, nullable=True)
     # 该训练已聚合更新轮次
-    updatenum = db.Column(db.Integer, nullable=False)
+    updatenum = db.Column(db.Integer, nullable=True)
     # 上一次聚合更新时间
     updatetime = db.Column(db.DateTime, nullable=True)
     # 训练结果保存的本地路径
-    modelpath = db.Column(db.String(20), nullable=False)
+    modelpath = db.Column(db.String(20), nullable=True)
