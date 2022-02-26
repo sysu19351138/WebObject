@@ -383,6 +383,67 @@ def task_visualize():
 
 
 
+"""信息列表相关功能"""
+@app.route(MY_URL + 'info_visualize/', methods=['GET','POST'])
+def info_visualize():
+
+    data = request.get_data()
+    data = json.loads(data.decode("utf-8"))
+
+    # 获取 token 并校验 token
+    try:
+        token = data.get('token')
+        data = verify_token(token)
+    except Exception:
+        abort(404)
+
+    # 检查匹配
+    TorF = mysql_sql.USER_INFO_find(data['username'])
+    if TorF == str(True):
+        # json生成
+        data = {
+            "code": 200,
+            "message": "Publish Success",
+        }
+    elif TorF == str(False):
+        data = {
+            "code": 200,
+            "message": "Publish False"
+        }
+
+    ret_json = json.dumps(data)
+    return ret_json
+
+@app.route(MY_URL + 'userpage_source/', methods=['GET','POST'])
+def userpage_source():
+
+    data = request.get_data()
+    data = json.loads(data.decode("utf-8"))
+
+    # 获取 token servicename 并校验 token
+    try:
+        token = data.get('token')
+        data = verify_token(token)
+    except Exception:
+        abort(404)
+
+    # 检查匹配
+    TorF = mysql_sql.USER_INFO_find(data['username'])
+    if TorF == str(True):
+        # json生成
+        data = {
+            "code": 200,
+            "message": "Publish Success",
+            "username":str(data['username'])
+        }
+    elif TorF == str(False):
+        data = {
+            "code": 200,
+            "message": "Publish False"
+        }
+
+    ret_json = json.dumps(data)
+    return ret_json
 
 
 
