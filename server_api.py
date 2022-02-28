@@ -97,28 +97,13 @@ def service_visualize():
 
     if TorF == str(True):
         service_info = mysql_sql.SERVICE_INFO_get()
-        print(service_info)
-        global_model_info = mysql_sql.GLOBAL_MODEL_INFO_get()
-        print(global_model_info)
-
         length = len(service_info)
 
         def get_data(servicename: str, servicebrief: str, servicedetail: str, next: str, nextdata):
-            # 下面几个参数分别是第3、4、6、7项
-            maxround = mysql_sql.GLOBAL_MODEL_INFO_find(servicename)[0][2]
-            aggregationtiming = mysql_sql.GLOBAL_MODEL_INFO_find(servicename)[0][3]
-            batchsize= mysql_sql.GLOBAL_MODEL_INFO_find(servicename)[0][5]
-            lr= mysql_sql.GLOBAL_MODEL_INFO_find(servicename)[0][6]
             return {
                 "servicename": servicename,
                 "servicebrief": servicebrief,
                 "servicedetail": servicedetail,
-                "strategies":{
-                                "maxround":maxround,
-                                "aggregationtiming":aggregationtiming,
-                                "batchsize":batchsize,
-                                "lr":lr
-                },
                 "next": next,
                 "nextdata": nextdata
             }
@@ -137,7 +122,7 @@ def service_visualize():
         }
     elif TorF == str(False):
         data = {
-            "code": 404,
+            "code": 200,
             "message": "False"
         }
 
