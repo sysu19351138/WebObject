@@ -11,27 +11,6 @@ import mysql_sql
 app = Flask(__name__)
 MY_URL = '/api/'
 
-# get
-@app.route(MY_URL + 'tasks/get/', methods=['GET'])
-def get_task():
-    # 必须存在某个参数
-    if not 'name' in request.args.to_dict():
-        abort(404)
-    print(request.args.to_dict())  #
-    return str(request.args.to_dict())
-
-# post
-@app.route(MY_URL + 'tasks/post/', methods=['POST'])
-def post_task():
-    print(request.json)
-    if not request.json:
-        abort(404)
-    print('222222222')
-    global hello
-    hello = hello + str(request.json)
-    print(hello)
-    return jsonify(request.json)
-
 """通用接口"""
 # 404 处理
 @app.errorhandler(404)
@@ -102,7 +81,7 @@ def home_source():
     ret_json = json.dumps(data)
     return ret_json
 
-@app.route(MY_URL + 'service_visualize/', methods=['GET','POST'])
+@app.route(MY_URL + 'service_visualize/', methods=['GET', 'POST'])
 def service_visualize():
     data = request.get_data()
     data = json.loads(data.decode("utf-8"))
@@ -117,22 +96,48 @@ def service_visualize():
     TorF = mysql_sql.USER_INFO_find(data['username'])
 
     if TorF == str(True):
-        service_info = mysql_sql.SERVICE_INFO_find(servicename='service1')
+        service_info = mysql_sql.SERVICE_INFO_get()
         print(service_info)
-        servicename = service_info[0][0]
-        servicebrief = service_info[0][1]
-        servicedetail = service_info[0][2]
+        global_model_info = mysql_sql.GLOBAL_MODEL_INFO_get()
+        print(global_model_info)
+
+        length = len(service_info)
+
+        def get_data(servicename: str, servicebrief: str, servicedetail: str, next: str, nextdata):
+            # 下面几个参数分别是第3、4、6、7项
+            maxround = mysql_sql.GLOBAL_MODEL_INFO_find(servicename)[0][2]
+            aggregationtiming = mysql_sql.GLOBAL_MODEL_INFO_find(servicename)[0][3]
+            batchsize= mysql_sql.GLOBAL_MODEL_INFO_find(servicename)[0][5]
+            lr= mysql_sql.GLOBAL_MODEL_INFO_find(servicename)[0][6]
+            return {
+                "servicename": servicename,
+                "servicebrief": servicebrief,
+                "servicedetail": servicedetail,
+                "strategies":{
+                                "maxround":maxround,
+                                "aggregationtiming":aggregationtiming,
+                                "batchsize":batchsize,
+                                "lr":lr
+                },
+                "next": next,
+                "nextdata": nextdata
+            }
+
+        data = get_data(service_info[length - 1][0], service_info[length - 1][1], service_info[length - 1][2], "0",
+                        "null")
+        for i in range(length - 1):
+            data = get_data(service_info[length - i - 2][0], service_info[length - i - 2][1],
+                            service_info[length - i - 2][2], "1", data)
+
         # json生成
         data = {
             "code": 200,
             "message": "Success",
-            "servicename": servicename,
-            "servicebrief": servicebrief,
-            "servicedetail": servicedetail,
+            "data": data
         }
     elif TorF == str(False):
         data = {
-            "code": 200,
+            "code": 404,
             "message": "False"
         }
 
@@ -149,13 +154,14 @@ def service_request():
     # 获取 token servicename 并校验 token
     try:
         token = data.get('token')
-        data = verify_token(token)
         servicename = data.get('servicename')
+        data = verify_token(token)
     except Exception:
         abort(404)
-
     # 检查匹配
-    TorF = mysql_sql.USER_INFO_find(data['username'])
+    TorF = mysql_sql.USER_INFO_find(data['username'])['flag']
+    TorF1 = mysql_sql.SERVICE_INFO_find(servicename)['flag']
+    TorF = TorF & TorF1
     if TorF == str(True):
         # json生成
         data = {
@@ -170,21 +176,13 @@ def service_request():
 
     # 流信息发布 通道为'event'
     red = redis.StrictRedis(host='localhost', port=6379, db=6)
-    red.publish('event', u'[Code:200 Message:Publish Begin]')
+    red.publish(str(servicename), u'[Code:200 Message:Publish Begin]')
     time.sleep(10)
-    red.publish('event', u'[Code:200 Message:Success] [Userid]:%s [Event]:%s [Data]:%s [Retry]:%s' % ("id",'event',"None",'None'))
+    red.publish(str(servicename), u'[Code:200 Message:Success] [Userid]:%s [Event]:%s [Data]:%s [Retry]:%s' % ("id",'event',"None",'None'))
 
     ret_json = json.dumps(data)
     #Response(ret_json, content_type='application/json')
     return ret_json
-
-# 实时监听事件(yield)
-def event_stream():
-    red = redis.StrictRedis(host='localhost', port=6379, db=6)
-    pubsub = red.pubsub()
-    pubsub.subscribe('event')
-    for message in pubsub.listen():
-        yield 'data: %s\n\n' % message['data']
 
 # 返回流式文件
 @app.route(MY_URL + '/model_download/<filename>', methods=['POST', 'GET'])
@@ -233,49 +231,6 @@ def model_download(filename):
     # 现在只返回图片
     return Response(send_chunk(), content_type='application/octet-stream')
 
-# 以下用以测试
-@app.route(MY_URL + 'service_test/', methods=['GET','POST'])
-def service_test():
-    # 流信息
-    data = event_stream()
-    print(data)
-    return Response(data,mimetype="text/event-stream")
-
-# 信息发布
-@app.route(MY_URL + 'service_public/', methods=['GET','POST'])
-def service_public():
-    # 信息发布
-    red = redis.StrictRedis(host='localhost', port=6379, db=6)
-    red.publish('event', u'[Code:200 Message:Success] [Userid]:%s [Event]:%s [Data]:%s [Retry]:%s' % ("id",'event',"None",'None'))
-    #red.publish('event', u'[%s]:%s %s' % ("Userid",'event','data','retry'))
-    return Response(status=204)
-
-# 测试用的URL 可不理
-@app.route(MY_URL + 'Test/')
-def home():
-    return u"""
-        <!doctype html>
-        <title>chat</title>
-        <script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-        <style>body { max-width: 500px; margin: auto; padding: 1em; background: black; color: #fff; font: 16px/1.6 menlo, monospace; }</style>
-        </p><button id="time">Click for time!</button>
-        <pre id="out"></pre>
-        <script>
-            function sse() {
-                var source = new EventSource('/api/service_test?channel=event');
-                var out = document.getElementById('out');
-                source.onmessage = function(e) {
-                    out.innerHTML = 'now-tiem:'+ e.data + '\\n' + out.innerHTML;
-                };
-            }
-            $('#time').click(function(){
-                    $.post('/api/service_public');
-                }
-            );
-            sse();
-        </script>
-    """
-
 """策略设置与训练调用接口"""
 @app.route(MY_URL + 'strategy_set/',methods=['GET','POST'])
 def strategy_set():
@@ -306,9 +261,11 @@ def strategy_set():
             "message": "Token Verify = False"
         }
     print(strategies)
+
     # GLOBAL_MODEL_INFO表更新 版本自己设置未更新
     mysql_sql.GLOBAL_MODEL_INFO_update1(servicename,"0.1",strategies['maxround'],strategies['aggregationtiming'],
                                   strategies['epsilon'],strategies['batchsize'],strategies['lr'])
+
     # 流信息发布 通道为'event'
     red = redis.StrictRedis(host='localhost', port=6379, db=6)
     red.publish('event', u'[Code:200 Message:Publish Begin]')
@@ -380,8 +337,6 @@ def task_visualize():
 
     ret_json = json.dumps(data)
     return ret_json
-
-
 
 """信息列表相关功能"""
 @app.route(MY_URL + 'info_visualize/', methods=['GET','POST'])

@@ -48,7 +48,7 @@ def USER_INFO_find(username: str):
         flag = False
 
     db.close()
-    return str(flag)
+    return {'flag':flag,'data':data}
 
 def USER_INFO_insert(phone: str, password: str):
     # 打开数据库连接
@@ -155,7 +155,7 @@ def SERVICE_INFO_find(servicename: str):
         flag = False
 
     db.close()
-    return data
+    return {'flag':flag,'data':data}
 
 def SERVICE_INFO_get():
     # 打开数据库连接
