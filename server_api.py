@@ -63,7 +63,7 @@ def home_source():
     except Exception:
         abort(404)
     # 检查匹配
-    TorF = mysql_sql.USER_INFO_find(data['username'])
+    TorF = mysql_sql.USER_INFO_find(data['username'])['flag']
     if TorF == str(True):
         username = data["username"]
         # json生成
@@ -93,7 +93,7 @@ def service_visualize():
         abort(404)
     # 检查匹配
 
-    TorF = mysql_sql.USER_INFO_find(data['username'])
+    TorF = mysql_sql.USER_INFO_find(data['username'])['flag']
 
     if TorF == str(True):
         service_info = mysql_sql.SERVICE_INFO_get()
@@ -168,6 +168,20 @@ def service_request():
     ret_json = json.dumps(data)
     #Response(ret_json, content_type='application/json')
     return ret_json
+# 实时监听事件(yield)
+def event_stream():
+    red = redis.StrictRedis(host='localhost', port=6379, db=6)
+    pubsub = red.pubsub()
+    pubsub.subscribe('event')
+    for message in pubsub.listen():
+        yield 'data: %s\n\n' % message['data']
+# sse数据接收接口
+@app.route(MY_URL + 'service_test/', methods=['GET', 'POST'])
+def service_test():
+    # 流信息
+    data = event_stream()
+    print(data)
+    return Response(data, mimetype="text/event-stream")
 
 # 返回流式文件
 @app.route(MY_URL + '/model_download/<filename>', methods=['POST', 'GET'])
@@ -181,8 +195,8 @@ def model_download(filename):
     # 判断数据库中同时有存在的username和servicename再返回图片
     data = verify_token(token)
     print(data)
-    flag1 = mysql_sql.USER_INFO_find(data['username'])
-    flag2 = mysql_sql.SERVICE_INFO_find(servicename=servicename)
+    flag1 = mysql_sql.USER_INFO_find(data['username'])['flag']
+    flag2 = mysql_sql.SERVICE_INFO_find(servicename=servicename)['flag']
 
     if flag1 and flag2:
         TorF = True
@@ -233,7 +247,7 @@ def strategy_set():
         abort(404)
 
     # 检查匹配
-    TorF = mysql_sql.USER_INFO_find(data['username'])
+    TorF = mysql_sql.USER_INFO_find(data['username'])['flag']
     if TorF == str(True):
         # json生成
         data = {
@@ -273,7 +287,7 @@ def task_visualize():
         abort(404)
     # 检查匹配
 
-    TorF = mysql_sql.USER_INFO_find(data['username'])
+    TorF = mysql_sql.USER_INFO_find(data['username'])['flag']
 
     if TorF == str(True):
         service_info = mysql_sql.SERVICE_INFO_get()
@@ -284,10 +298,10 @@ def task_visualize():
 
         def get_data(servicename: str, servicebrief: str, servicedetail: str, next: str, nextdata):
             # 下面几个参数分别是第3、4、6、7项
-            maxround = mysql_sql.GLOBAL_MODEL_INFO_find(servicename)[0][2]
-            aggregationtiming = mysql_sql.GLOBAL_MODEL_INFO_find(servicename)[0][3]
-            batchsize= mysql_sql.GLOBAL_MODEL_INFO_find(servicename)[0][5]
-            lr= mysql_sql.GLOBAL_MODEL_INFO_find(servicename)[0][6]
+            maxround = mysql_sql.GLOBAL_MODEL_INFO_find(servicename)['data'][0][2]
+            aggregationtiming = mysql_sql.GLOBAL_MODEL_INFO_find(servicename)['data'][0][3]
+            batchsize= mysql_sql.GLOBAL_MODEL_INFO_find(servicename)['data'][0][5]
+            lr= mysql_sql.GLOBAL_MODEL_INFO_find(servicename)['data'][0][6]
             return {
                 "servicename": servicename,
                 "servicebrief": servicebrief,
@@ -338,7 +352,7 @@ def info_visualize():
         abort(404)
 
     # 检查匹配
-    TorF = mysql_sql.USER_INFO_find(data['username'])
+    TorF = mysql_sql.USER_INFO_find(data['username'])['flag']
     if TorF == str(True):
         # json生成
         data = {
@@ -368,7 +382,7 @@ def userpage_source():
         abort(404)
 
     # 检查匹配
-    TorF = mysql_sql.USER_INFO_find(data['username'])
+    TorF = mysql_sql.USER_INFO_find(data['username'])['flag']
     if TorF == str(True):
         # json生成
         data = {
@@ -384,18 +398,3 @@ def userpage_source():
 
     ret_json = json.dumps(data)
     return ret_json
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

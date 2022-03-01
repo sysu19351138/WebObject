@@ -254,4 +254,4 @@ def GLOBAL_MODEL_INFO_find(servicename: str):
         flag = False
 
     db.close()
-    return data
+    return {'flag':flag,'data':data}

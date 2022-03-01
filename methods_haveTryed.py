@@ -9,6 +9,7 @@ def event_stream():
     pubsub.subscribe('event')
     for message in pubsub.listen():
         yield 'data: %s\n\n' % message['data']
+        
 # 以下用以测试
 @app.route(MY_URL + 'service_test/', methods=['GET','POST'])
 def service_test():
@@ -25,6 +26,7 @@ def service_public():
     red.publish('event', u'[Code:200 Message:Success] [Userid]:%s [Event]:%s [Data]:%s [Retry]:%s' % ("id",'event',"None",'None'))
     #red.publish('event', u'[%s]:%s %s' % ("Userid",'event','data','retry'))
     return Response(status=204)
+    
 # 测试用的URL 可不理
 @app.route(MY_URL + 'Test/')
 def home():

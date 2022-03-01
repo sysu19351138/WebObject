@@ -12,6 +12,9 @@
   <component name="ChangeListManager">
     <list default="true" id="abd61619-22ed-4e23-8bee-965a6abb37c8" name="默认的" comment="2022.2.28 根据前端反馈进行了完善">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods_haveTryed.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods_haveTryed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646027125628</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="2022.2.28 根据前端反馈进行了完善">
+      <created>1646032479176</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1646032479176</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -453,10 +463,10 @@
     </state>
     <state x="0" y="0" width="1680" height="1050" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1645288490709" />
     <state x="432" y="167" key="SettingsEditor/0.25.1680.951@0.25.1680.951" timestamp="1645063231221" />
-    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1646027668512">
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1646032595160">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1646027668512" />
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1646032595160" />
     <state x="221" y="235" width="1480" height="940" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1643277121422">
       <screen x="0" y="25" width="1680" height="947" />
     </state>
