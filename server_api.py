@@ -176,8 +176,8 @@ def event_stream():
     for message in pubsub.listen():
         yield 'data: %s\n\n' % message['data']
 # sse数据接收接口
-@app.route(MY_URL + 'service_test/', methods=['GET', 'POST'])
-def service_test():
+@app.route(MY_URL + 'sse_message/', methods=['GET', 'POST'])
+def sse_message():
     # 流信息
     data = event_stream()
     print(data)
